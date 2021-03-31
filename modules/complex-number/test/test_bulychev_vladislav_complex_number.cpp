@@ -1,14 +1,16 @@
 // Copyright 2021 Bulychev Vladislav
 
 #include <gtest/gtest.h>
+
 #include <tuple>
+
 #include "include/complex_number.h"
 
 TEST(Bulychev_Vladislav_ComplexNumberTest, Get_And_Set) {
     double im = 0.0;
     ComplexNumber n(0.0, 1.0);
     n.setIm(im);
-    EXPECT_EQ(im, n.getIm());
+    ASSERT_EQ(im, n.getIm());
 }
 
 typedef testing::TestWithParam<std::tuple<double, double, double, double>>
