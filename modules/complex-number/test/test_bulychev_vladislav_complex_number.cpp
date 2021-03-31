@@ -9,7 +9,9 @@
 TEST(Bulychev_Vladislav_ComplexNumberTest, Get_And_Set) {
     double im = 0.0;
     ComplexNumber n(0.0, 1.0);
+
     n.setIm(im);
+
     ASSERT_EQ(im, n.getIm());
 }
 
@@ -25,16 +27,20 @@ TEST_P(Bulychev_Vladislav_ComplexNumberTest_Param, Addition_Test) {
     double n4 = (std::get<3>(GetParam()));
     double re = n1 + n3;
     double im = n2 + n4;
+
     ComplexNumber r1(re, im);
     ComplexNumber r2 = a + b;
+
     ASSERT_EQ(r1, r2);
 }
 
 TEST_P(Bulychev_Vladislav_ComplexNumberTest_Param, Multiplication_Test) {
     ComplexNumber a(std::get<0>(GetParam()), std::get<1>(GetParam()));
     ComplexNumber b(std::get<2>(GetParam()), std::get<3>(GetParam()));
+
     ComplexNumber r1 = (a - b) * (a + b);
     ComplexNumber r2 = a * a - b * b;
+
     ASSERT_EQ(r1, r2);
 }
 
