@@ -74,6 +74,24 @@ TEST(Bulychev_V_NumConvCalc, CanConvertDecToBin) {
     EXPECT_EQ(bin, ConvertDecToBin(dec));
 }
 
+TEST(Bulychev_V_NumConvCalc, CanConvertBinToHex) {
+    NumberConverter bin("1010101111001101111011111001100001110110010101000011001000010000", BIN );
+    std::string hex = "ABCDEF9876543210";
+    EXPECT_EQ(hex, bin.GetNumberInHex());
+}
+
+TEST(Bulychev_V_NumConvCalc, CanConvertHexToBin) {
+    NumberConverter hex("ABCDEF9876543210", HEX);
+    std::string bin = "1010101111001101111011111001100001110110010101000011001000010000";
+    EXPECT_EQ(bin, hex.GetNumberInBin());
+}
+
+TEST(Bulychev_V_NumConvCalc, CanConvertOctToBin) {
+    NumberConverter oct("1257157371416625031020", OCT);
+    std::string bin = "1010101111001101111011111001100001110110010101000011001000010000";
+    EXPECT_EQ(bin, oct.GetNumberInBin());
+}
+
 TEST(Bulychev_V_NumConvCalc, CanSum) {
     NumberConverter conv1("1111", BIN);
     NumberConverter conv2("12", OCT);
@@ -126,4 +144,11 @@ TEST(Bulychev_V_NumConvCalc, CanDiffCorrectly_3) {
     NumberConverter conv2("12", OCT);
     NumberConverter convres = conv1 - conv2;
     EXPECT_EQ("5", convres.GetNumberInHex());
+}
+
+TEST(Bulychev_V_NumConvCalc, CutFrontZeros) {
+    NumberConverter conv("0001", BIN);
+    EXPECT_EQ("1", conv.GetNumberInBin());
+    EXPECT_EQ("1", conv.GetNumberInOct());
+    EXPECT_EQ("1", conv.GetNumberInHex());
 }
