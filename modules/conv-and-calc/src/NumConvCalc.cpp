@@ -28,13 +28,6 @@ NumberConverter::NumberConverter(std::string input_number,
     }
 }
 
-NumberConverter::NumberConverter(const NumberConverter
-    & n) {
-    NumberInBin = CutFrontZeros(n.NumberInBin);
-    NumberInOct = CutFrontZeros(n.NumberInOct);
-    NumberInHex = CutFrontZeros(n.NumberInHex);
-}
-
 std::string NumberConverter::GetNumberInBin() const {
     return NumberInBin;
 }
@@ -161,9 +154,6 @@ std::string NumberConverter::ConvertBinToHex(const std::string n) {
             break;
         case 1111:
             digit_hex = 'F';
-            break;
-        default:
-            throw("Error");
             break;
         }
 

@@ -11,8 +11,6 @@ class NumberConverter {
     explicit NumberConverter(std::string input_number = "0",
         SysBase input_base = BIN);
 
-    NumberConverter(const NumberConverter& n);
-
     std::string GetNumberInBin() const;
     std::string GetNumberInOct() const;
     std::string GetNumberInHex() const;
