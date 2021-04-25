@@ -357,8 +357,7 @@ std::string ConvertBinToDec(const std::string& n) {
         }
         dec_sum = dec_sum + cur_digit * pow(2, p);
         p++;
-        if (it == bin.begin())
-        {
+        if (it == bin.begin()) {
             break;
         } else {
             --it;
