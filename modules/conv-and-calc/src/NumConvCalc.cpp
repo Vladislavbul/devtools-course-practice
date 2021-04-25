@@ -348,7 +348,7 @@ std::string ConvertBinToDec(const std::string& n) {
     int dec_sum = 0;
     int p = 0;
     int cur_digit;
-    for (std::string::iterator it = bin.end(); it > bin.begin(); --it) {
+    for (std::string::iterator it = bin.end(); it > bin.begin(); it--) {
         if (*(it - 1) == '0') {
             cur_digit = 0;
         } else {
