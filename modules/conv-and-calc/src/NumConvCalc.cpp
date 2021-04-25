@@ -347,15 +347,22 @@ std::string ConvertBinToDec(const std::string& n) {
     std::string dec;
     int dec_sum = 0;
     int p = 0;
-    int cur_digit;
-    for (std::string::iterator it = bin.end(); it > bin.begin(); it--) {
-        if (*(it - 1) == '0') {
+    int cur_digit = 0;
+
+    for (std::string::iterator it = bin.end() - 1; it >= bin.begin();) {
+        if (*(it) == '0') {
             cur_digit = 0;
         } else {
             cur_digit = 1;
         }
         dec_sum = dec_sum + cur_digit * pow(2, p);
         p++;
+        if (it == bin.begin())
+        {
+            break;
+        } else {
+            --it;
+        }
     }
     dec = std::to_string(dec_sum);
     return dec;
