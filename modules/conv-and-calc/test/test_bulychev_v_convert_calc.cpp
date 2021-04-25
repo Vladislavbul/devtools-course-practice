@@ -75,20 +75,24 @@ TEST(Bulychev_V_NumConvCalc, CanConvertDecToBin) {
 }
 
 TEST(Bulychev_V_NumConvCalc, CanConvertBinToHex) {
-    NumberConverter bin("1010101111001101111011111001100001110110010101000011001000010000", BIN );
+    NumberConverter bin(
+        "1010101111001101111011111001100001110110010101000011001000010000",
+        BIN);
     std::string hex = "ABCDEF9876543210";
     EXPECT_EQ(hex, bin.GetNumberInHex());
 }
 
 TEST(Bulychev_V_NumConvCalc, CanConvertHexToBin) {
     NumberConverter hex("ABCDEF9876543210", HEX);
-    std::string bin = "1010101111001101111011111001100001110110010101000011001000010000";
+    std::string bin =
+        "1010101111001101111011111001100001110110010101000011001000010000";
     EXPECT_EQ(bin, hex.GetNumberInBin());
 }
 
 TEST(Bulychev_V_NumConvCalc, CanConvertOctToBin) {
     NumberConverter oct("1257157371416625031020", OCT);
-    std::string bin = "1010101111001101111011111001100001110110010101000011001000010000";
+    std::string bin =
+        "1010101111001101111011111001100001110110010101000011001000010000";
     EXPECT_EQ(bin, oct.GetNumberInBin());
 }
 
