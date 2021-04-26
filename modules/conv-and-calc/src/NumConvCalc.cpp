@@ -1,9 +1,11 @@
 // Copyright 2021 Bulychev Vladislav
 
 #include <math.h>
+
 #include <string>
 #include <sstream>
 #include <bitset>
+
 #include "include/NumConvCalc.h"
 
 NumberConverter::NumberConverter(std::string input_number,
