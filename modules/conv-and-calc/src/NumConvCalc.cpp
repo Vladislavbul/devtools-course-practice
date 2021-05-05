@@ -340,15 +340,13 @@ std::string ConvertBinToDec(const std::string& n) {
     int dec_sum = 0;
     int p = 0;
     int cur_digit = 0;
-	
-	std::string::iterator it = bin.end();
-    do{
+    std::string::iterator it = bin.end();
+    do {
         --it;
         cur_digit = *(it) == '0' ? 0 : 1;
         dec_sum = dec_sum + cur_digit * pow(2, p);
         p++;
-    } while(it != bin.begin());
-	
+    } while (it != bin.begin());
     dec = std::to_string(dec_sum);
     return dec;
 }
@@ -360,7 +358,7 @@ std::string ConvertDecToBin(const std::string& n) {
     int int_dec = atoi(dec.c_str());
     while (int_dec > 0) {
         int bin_digit = int_dec % 2;
-		bin_digit_char = bin_digit == 0 ? '0' : '1';
+        bin_digit_char = bin_digit == 0 ? '0' : '1';
         bin.std::string::insert(bin.std::string::begin(), bin_digit_char);
         int_dec = int_dec / 2;
     }
