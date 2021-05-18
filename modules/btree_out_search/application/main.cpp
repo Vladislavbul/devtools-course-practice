@@ -6,6 +6,7 @@
 
 int main(int argc, const char* argv[]) {
     TreeApp app;
-    std::cout << app(argc, argv) << std::endl;
+    const std::string out = app(argc, argv);
+    printf("%s\n", out.c_str());
     return 0;
 }

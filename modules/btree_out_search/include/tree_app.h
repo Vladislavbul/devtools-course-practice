@@ -10,7 +10,7 @@ class TreeApp {
      TreeApp() = default;
      std::string operator()(int argc, const char** argv);
  private:
-    std::string help(const std::string& filename) const;
+     std::string help(const std::string& filename) const;
 };
 
 #endif  // MODULES_BTREE_OUT_SEARCH_INCLUDE_TREE_APP_H_
