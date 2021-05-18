@@ -9,9 +9,9 @@
 #include "include/btree.h"
 
 std::string TreeApp::help(const std::string& filename) const {
-    return "This is application for tree class\n"
-        "Actions:\n"
-        "add <value> - add value to the tree\n"
+    return "This is application for tree class\n" \
+        "Actions:\n" \
+        "add <value> - add value to the tree\n" \
         "find <value> - find the value in the tree\n";
 }
 

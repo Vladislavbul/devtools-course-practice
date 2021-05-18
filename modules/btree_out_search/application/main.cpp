@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+
 #include "include/tree_app.h"
 
 int main(int argc, const char* argv[]) {
